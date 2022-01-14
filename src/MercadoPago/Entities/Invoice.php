@@ -2,12 +2,12 @@
 /**
  * Invoice class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * Invoice class
  * @RestMethod(resource="/v1/invoices/:id", method="read")

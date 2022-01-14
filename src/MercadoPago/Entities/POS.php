@@ -1,10 +1,10 @@
 <?php
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * POS class
  * @link https://www.mercadopago.com/developers/en/reference/pos/_pos/post/ Click here for more infos

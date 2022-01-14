@@ -1,10 +1,10 @@
 <?php
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * Instore Order class
  * @link https://www.mercadopago.com/developers/en/reference/instore_orders/_mpmobile_instore_qr_user_id_external_id/post/ Click here for more infos

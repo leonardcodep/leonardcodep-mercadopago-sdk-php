@@ -2,13 +2,13 @@
 /**
  * Discount Campaign class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use http\Params;
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * discount Campaign class
  * @RestMethod(resource="/v1/discount_campaigns", method="read")

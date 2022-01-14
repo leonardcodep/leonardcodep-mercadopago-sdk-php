@@ -2,12 +2,12 @@
 /**
  * Preapproval class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * preapproval class
  * @RestMethod(resource="/preapproval/:id", method="read")

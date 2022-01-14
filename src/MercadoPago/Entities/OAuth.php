@@ -2,11 +2,12 @@
 /**
  * OAuth class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
+use MercadoPago\SDK;
 /**
  * OAuth class
  * @RestMethod(resource="/oauth/token", method="create")

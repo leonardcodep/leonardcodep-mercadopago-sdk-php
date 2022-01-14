@@ -2,12 +2,12 @@
 /**
  * Subscription class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * Subscription class
  * @RestMethod(resource="/v1/subscriptions/:id", method="read")

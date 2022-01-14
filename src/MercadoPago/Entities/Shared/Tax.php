@@ -2,9 +2,10 @@
 /**
  * Tax class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entity\Shared;
 
 use MercadoPago\Annotation\Attribute;
+use MercadoPago\Entity;
 
 /**
  * Tax class

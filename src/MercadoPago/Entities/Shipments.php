@@ -2,13 +2,13 @@
 /**
  * Shipments class file
  */
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
 use phpDocumentor\Descriptor\Type\FloatDescriptor;
-
+use MercadoPago\Entity;
 /**
  * Shipments class
  * @RestMethod(resource="/v1/payments/:payment_id/refunds", method="create")

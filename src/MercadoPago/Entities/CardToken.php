@@ -1,10 +1,10 @@
 <?php
-namespace MercadoPago;
+namespace MercadoPago\Entities;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
-
+use MercadoPago\Entity;
 /**
  * Card Token class
  * This class will allow you to send your customers card data for Mercado Pago server and receive a token to complete the payments transactions.
