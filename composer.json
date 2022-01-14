@@ -11,7 +11,7 @@
     "pagos",
     "laravel"
   ],
-  "homepage": "https://github.com/leonardcodep/mercadopago-sdk-php",
+  "homepage": "https://github.com/leonardcodep/leonardcodep-mercadopago-sdk-php",
   "type": "library",
   "license": "MIT",
   "require": {
@@ -23,14 +23,7 @@
     "phpunit/phpunit": "4.4.* || 4.8.* || 9.5.*"
   },
   "autoload": {
-    "psr-4": {
-      "MercadoPago\\": [
-        "src/MercadoPago/",
-        "src/MercadoPago/Generic/",
-        "src/MercadoPago/Entities/",
-        "src/MercadoPago/Entities/Shared/"
-      ]
-    }
+    "classmap": ["src/MercadoPago/"]
   },
   "repositories": [
     {
