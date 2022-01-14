@@ -8,8 +8,7 @@ use Exception;
  *
  * @package MercadoPago
  */
-class Config
-    extends Config\AbstractConfig
+class Config extends Config\AbstractConfig
 {
     /**
      * Available parsers
@@ -108,14 +107,13 @@ class Config
     {
         parent::set($key, $value);
 
-        if ($key == "ACCESS_TOKEN") { 
+        if ($key == "ACCESS_TOKEN") {
             $user = $this->getUserId($value);
             parent::set('USER_ID', $user['id']);
             parent::set('COUNTRY_ID', $user['country_id']);
         }
         
         if (parent::get('CLIENT_ID') != "" && parent::get('CLIENT_SECRET') != "" && empty(parent::get('ACCESS_TOKEN'))) {
-            
             $response = $this->getToken();
 
             if (isset($response['access_token'])) {
@@ -127,14 +125,12 @@ class Config
                 if (isset($user['id'])) {
                     parent::set('USER_ID', $user['id']);
                 }
-
             }
-            
         }
     }
 
 
-    /** 
+    /**
      * @return mixed
      */
     public function getUserId()
@@ -187,7 +183,8 @@ class Config
         return $response['body'];
     }
 
-    public function getData(){
+    public function getData()
+    {
         return $this->data;
     }
 }

@@ -67,5 +67,4 @@ class Item extends Entity
      * @var float
      */
     protected $unit_price;
-
 }

@@ -3,8 +3,8 @@
 
     use ArrayObject;
 
-    class SearchResultsArray extends ArrayObject {
-
+    class SearchResultsArray extends ArrayObject
+    {
         public $_filters;
         public $limit;
         public $total;
@@ -13,17 +13,20 @@
         public $_class;
         
 
-        public function setEntityTypes($class){
+        public function setEntityTypes($class)
+        {
             $this->_class = $class;
         }
 
-        public function setPaginateParams($params){ 
+        public function setPaginateParams($params)
+        {
             $this->limit  = $params["limit"];
             $this->total  = $params["total"];
-            $this->offset = $params["offset"]; 
+            $this->offset = $params["offset"];
         }
 
-        public function next() {
+        public function next()
+        {
             $new_offset = $this->limit + $this->offset;
             $this->_filters['offset'] = $new_offset;
             $result = $this->_class::search($this->_filters);
@@ -32,17 +35,18 @@
             $this->offset = $result->offset;
             $this->total = $result->total;
 
-            $this->exchangeArray($result->getArrayCopy()); 
+            $this->exchangeArray($result->getArrayCopy());
         }
 
-        public function fetch($filters, $body) {
+        public function fetch($filters, $body)
+        {
             $this->_filters = $filters;
 
             if ($body) {
                 $results = [];
                 if (array_key_exists("results", $body)) {
                     $results = $body["results"];
-                } else if (array_key_exists("elements", $body)) {
+                } elseif (array_key_exists("elements", $body)) {
                     $results = $body["elements"];
                 }
 
@@ -56,16 +60,16 @@
             }
         }
 
-        public function process_error_body($message){ 
-
+        public function process_error_body($message)
+        {
             $recuperable_error = new RecuperableError(
                 $message['message'],
                 $message['error'],
                 $message['status']
             );
     
-            foreach ($message['cause'] as $causes) { 
-                if(is_array($causes)) {
+            foreach ($message['cause'] as $causes) {
+                if (is_array($causes)) {
                     foreach ($causes as $cause) {
                         $recuperable_error->add_cause($cause['code'], $cause['description']);
                     }
@@ -77,7 +81,8 @@
             $this->errors = $recuperable_error;
         }
 
-        private function fetchPaging($filters, $body) {
+        private function fetchPaging($filters, $body)
+        {
             if (array_key_exists("paging", $body)) {
                 $paging = $body["paging"];
                 $this->limit  = $paging["limit"];
@@ -89,7 +94,4 @@
                 $this->total  = array_key_exists("total", $body) ? $body["total"] : 0;
             }
         }
-
     }
-
-?>

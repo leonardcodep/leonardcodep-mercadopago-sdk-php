@@ -32,5 +32,4 @@ class Documentation extends Entity
      * @var string
     */
     protected $description;
-
 }

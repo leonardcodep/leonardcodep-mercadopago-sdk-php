@@ -9,7 +9,6 @@ use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
 
-
 /**
  * Chargeback class
  * @RestMethod(resource="/v1/chargebacks/:id", method="read")
@@ -99,5 +98,4 @@ class Chargeback extends Entity
      * @var boolean
      */
     protected $live_mode;
-
 }

@@ -13,7 +13,8 @@ use MercadoPago\Annotation\Attribute;
  * @RestMethod(resource="/v1/payments/:payment_id/refunds", method="create")
  * @RestMethod(resource="/v1/payments/:payment_id/refunds/:id", method="read")
  */
-class Refund extends Entity {
+class Refund extends Entity
+{
 
     /**
      * id
@@ -56,5 +57,4 @@ class Refund extends Entity {
      * @var \DateTime
      */
     protected $date_created;
-
 }

@@ -8,7 +8,7 @@ use MercadoPago\Annotation\Attribute;
 /**
  * Payment Method class
  * @link https://www.mercadopago.com/developers/en/reference/payment_methods/_payment_methods/get/ Click here for more infos
- * 
+ *
  * @RestMethod(resource="/v1/payment_methods", method="list")
  */
 

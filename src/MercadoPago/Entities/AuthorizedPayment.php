@@ -82,18 +82,18 @@ class AuthorizedPayment extends Entity
      */
     protected $reason;
 
-     /**
-      * external_reference
-     * @Attribute(type = "string")
-     * @var string
-     */
+    /**
+     * external_reference
+    * @Attribute(type = "string")
+    * @var string
+    */
     protected $external_reference;
 
-     /**
-      * payment
-     * @Attribute(type = "object")
-     * @var object
-     */
+    /**
+     * payment
+    * @Attribute(type = "object")
+    * @var object
+    */
     protected $payment;
 
     /**
@@ -144,6 +144,4 @@ class AuthorizedPayment extends Entity
      * @var string
      */
     protected $coupon_code;
-
-
 }

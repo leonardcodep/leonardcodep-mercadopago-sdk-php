@@ -3,13 +3,13 @@ namespace MercadoPago;
 
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
-use MercadoPago\Annotation\Attribute; 
+use MercadoPago\Annotation\Attribute;
 
 /**
  * This class will allow you to create and manage your orders. You can attach one or more payments in your merchant order.
  * @link https://www.mercadopago.com/developers/en/reference/merchant_orders/_merchant_orders_search/get/ Click here for more infos
- * 
- * @RestMethod(resource="/merchant_orders/:id", method="read") 
+ *
+ * @RestMethod(resource="/merchant_orders/:id", method="read")
  * @RestMethod(resource="/merchant_orders/", method="create")
  * @RestMethod(resource="/merchant_orders/:id", method="update")
  */
@@ -22,153 +22,152 @@ class MerchantOrder extends Entity
    * @Attribute()
    * @var int
    */
-  protected $id;
+    protected $id;
   
-  /**
-   * preferenceId
-   * @Attribute()
-   * @var string
-   */
-  protected $preferenceId;
+    /**
+     * preferenceId
+     * @Attribute()
+     * @var string
+     */
+    protected $preferenceId;
   
-  /**
-   * dateCreated
-   * @Attribute()
-   * @var string
-   */
-  protected $dateCreated;
+    /**
+     * dateCreated
+     * @Attribute()
+     * @var string
+     */
+    protected $dateCreated;
   
-  /**
-   * lastUpdated
-   * @Attribute()
-   * @var string
-   */
-  protected $lastUpdate;
+    /**
+     * lastUpdated
+     * @Attribute()
+     * @var string
+     */
+    protected $lastUpdate;
   
-  /**
-   * applicationId
-   * @Attribute
-   * @var string
-   */
-  protected $applicationId;
+    /**
+     * applicationId
+     * @Attribute
+     * @var string
+     */
+    protected $applicationId;
   
-  /**
-   * status
-   * @Attribute()
-   * @var string
-   */
-  protected $status;
+    /**
+     * status
+     * @Attribute()
+     * @var string
+     */
+    protected $status;
   
-  /**
-   * siteId
-   * @Attribute()
-   * @var string
-   */
-  protected $siteId;
+    /**
+     * siteId
+     * @Attribute()
+     * @var string
+     */
+    protected $siteId;
   
-  /**
-   * payer
-   * @Attribute()
-   * @var object
-   */
-  protected $payer;
+    /**
+     * payer
+     * @Attribute()
+     * @var object
+     */
+    protected $payer;
   
-  /**
-   * collector
-   * @Attribute()
-   * @var object
-   */
-  protected $collector;
+    /**
+     * collector
+     * @Attribute()
+     * @var object
+     */
+    protected $collector;
   
-  /**
-   * sponsorId
-   * @Attribute()
-   * @var int
-   */
-  protected $sponsorId;
+    /**
+     * sponsorId
+     * @Attribute()
+     * @var int
+     */
+    protected $sponsorId;
   
-  /**
-   * payments
-   * @Attribute()
-   * @var array
-   */
-  protected $payments;
+    /**
+     * payments
+     * @Attribute()
+     * @var array
+     */
+    protected $payments;
   
-  /**
-   * paidAmount
-   * @Attribute()
-   * @var float
-   */
-  protected $paidAmount;
+    /**
+     * paidAmount
+     * @Attribute()
+     * @var float
+     */
+    protected $paidAmount;
   
-  /**
-   * refundedAmount
-   * @Attribute()
-   * @var float
-   */
-  protected $refundedAmount;
+    /**
+     * refundedAmount
+     * @Attribute()
+     * @var float
+     */
+    protected $refundedAmount;
   
-  /**
-   * shippingCost
-   * @Attribute()
-   * @var float
-   */
-  protected $shippingCost;
+    /**
+     * shippingCost
+     * @Attribute()
+     * @var float
+     */
+    protected $shippingCost;
   
-  /**
-   * cancelled
-   * @Attribute()
-   * @var boolean
-   */
-  protected $cancelled;
+    /**
+     * cancelled
+     * @Attribute()
+     * @var boolean
+     */
+    protected $cancelled;
   
-  /**
-   * items
-   * @Attribute()
-   * @var array
-   */
-  protected $items;
+    /**
+     * items
+     * @Attribute()
+     * @var array
+     */
+    protected $items;
   
-  /**
-   * shipments
-   * @Attribute()
-   * @var array
-   */
-  protected $shipments;
+    /**
+     * shipments
+     * @Attribute()
+     * @var array
+     */
+    protected $shipments;
   
-  /**
-   * notificationUrl
-   * @Attribute()
-   * @var string
-   */
-  protected $notificationUrl;
+    /**
+     * notificationUrl
+     * @Attribute()
+     * @var string
+     */
+    protected $notificationUrl;
   
-  /**
-   * additionalInfo
-   * @Attribute()
-   * @var string
-   */
-  protected $additionalInfo;
+    /**
+     * additionalInfo
+     * @Attribute()
+     * @var string
+     */
+    protected $additionalInfo;
   
-  /**
-   * externalReference
-   * @Attribute()
-   * @var string
-   */
-  protected $externalReference;
+    /**
+     * externalReference
+     * @Attribute()
+     * @var string
+     */
+    protected $externalReference;
   
-  /**
-   * marketplace
-   * @Attribute()
-   * @var string
-   */
-  protected $marketplace;
+    /**
+     * marketplace
+     * @Attribute()
+     * @var string
+     */
+    protected $marketplace;
   
-  /**
-   * totalAmount
-   * @Attribute()
-   * @var float
-   */
-  protected $totalAmount;
-  
+    /**
+     * totalAmount
+     * @Attribute()
+     * @var float
+     */
+    protected $totalAmount;
 }

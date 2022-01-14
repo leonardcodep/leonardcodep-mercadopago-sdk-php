@@ -14,7 +14,8 @@ use MercadoPago\Entity;
  * @RestMethod(resource="/v1/advanced_payments/:advanced_payment_id/refunds", method="create")
  * @RestMethod(resource="/v1/advanced_payments/:advanced_payment_id/refunds/:refund_id", method="read")
  */
-class Refund extends Entity {
+class Refund extends Entity
+{
 
     /**
      * id
@@ -57,5 +58,4 @@ class Refund extends Entity {
      * @var \DateTime
      */
     protected $date_created;
-
 }

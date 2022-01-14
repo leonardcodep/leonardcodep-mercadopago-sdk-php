@@ -1,17 +1,18 @@
 <?php
 /**
- 
+
  */
 namespace MercadoPago;
+
 use MercadoPago\Annotation\RestMethod;
 use MercadoPago\Annotation\RequestParam;
-use MercadoPago\Annotation\Attribute; 
+use MercadoPago\Annotation\Attribute;
 
 /**
  * This class provides the methods to access the API that will allow you to create your own payment experience on your website.
- *  
+ *
  * From basic to advanced configurations, you control the whole experience.
- *  
+ *
  * @link https://www.mercadopago.com/developers/en/guides/online-payments/checkout-api/introduction/ Click here for more infos
  *
  * @RestMethod(resource="/v1/payments", method="create")
@@ -582,17 +583,18 @@ class Payment extends Entity
      * @return bool
      * @throws \Exception
      */
-    public function refund($amount = 0){
+    public function refund($amount = 0)
+    {
         $refund = new Refund(["payment_id" => $this->id]);
-        if ($amount > 0){
+        if ($amount > 0) {
             $refund->amount = $amount;
         }
 
-        if ($refund->save()){
+        if ($refund->save()) {
             $payment = self::get($this->id);
             $this->_fillFromArray($this, $payment->toArray());
             return true;
-        }else{
+        } else {
             $this->error = $refund->error;
             return false;
         }
@@ -607,7 +609,7 @@ class Payment extends Entity
     public function capture($amount = 0)
     {
         $this->capture = true;
-        if ($amount > 0){
+        if ($amount > 0) {
             $this->transaction_amount = $amount;
         }
 

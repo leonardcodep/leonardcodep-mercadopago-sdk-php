@@ -21,105 +21,104 @@ class Invoice extends Entity
    * @Attribute()
    * @var string
    */
-  protected $id;
+    protected $id;
   
-  /**
-   * subscription_id
-   * @Attribute()
-   * @var string
-   */
-  protected $subscription_id;
+    /**
+     * subscription_id
+     * @Attribute()
+     * @var string
+     */
+    protected $subscription_id;
   
-  /**
-   * plan_id
-   * @Attribute()
-   * @var string
-   */
-  protected $plan_id;
+    /**
+     * plan_id
+     * @Attribute()
+     * @var string
+     */
+    protected $plan_id;
   
-  /**
-   * payer
-   * @Attribute()
-   * @var object
-   */
-  protected $payer;
+    /**
+     * payer
+     * @Attribute()
+     * @var object
+     */
+    protected $payer;
   
-  /**
-   * application_fee
-   * @Attribute()
-   * @var float
-   */
-  protected $application_fee;
+    /**
+     * application_fee
+     * @Attribute()
+     * @var float
+     */
+    protected $application_fee;
   
-  /**
-   * status
-   * @Attribute()
-   * @var string
-   */
-  protected $status;
+    /**
+     * status
+     * @Attribute()
+     * @var string
+     */
+    protected $status;
   
-  /**
-   * description
-   * @Attribute()
-   * @var string
-   */
-  protected $description;
+    /**
+     * description
+     * @Attribute()
+     * @var string
+     */
+    protected $description;
   
-  /**
-   * external_reference
-   * @Attribute()
-   * @var string
-   */
-  protected $external_reference;
+    /**
+     * external_reference
+     * @Attribute()
+     * @var string
+     */
+    protected $external_reference;
   
-  /**
-   * date_created
-   * @Attribute()
-   * @var string
-   */
-  protected $date_created;
+    /**
+     * date_created
+     * @Attribute()
+     * @var string
+     */
+    protected $date_created;
   
-  /**
-   * last_modified
-   * @Attribute()
-   * @var string
-   */
-  protected $last_modified;
+    /**
+     * last_modified
+     * @Attribute()
+     * @var string
+     */
+    protected $last_modified;
   
-  /**
-   * live_mode
-   * @Attribute()
-   * @var boolean
-   */
-  protected $live_mode;
+    /**
+     * live_mode
+     * @Attribute()
+     * @var boolean
+     */
+    protected $live_mode;
   
   
-  /**
-   * metadata
-   * @Attribute()
-   * @var object
-   */
-  protected $metadata;
+    /**
+     * metadata
+     * @Attribute()
+     * @var object
+     */
+    protected $metadata;
   
-  /**
-   * payments
-   * @Attribute()
-   * @var array
-   */
-  protected $payments;
+    /**
+     * payments
+     * @Attribute()
+     * @var array
+     */
+    protected $payments;
   
-  /**
-   * debit_date
-   * @Attribute()
-   * @var string
-   */
-  protected $debit_date;
+    /**
+     * debit_date
+     * @Attribute()
+     * @var string
+     */
+    protected $debit_date;
   
-  /**
-   * next_payment_date
-   * @Attribute()
-   * @var string
-   */
-  protected $next_payment_date;
-
+    /**
+     * next_payment_date
+     * @Attribute()
+     * @var string
+     */
+    protected $next_payment_date;
 }

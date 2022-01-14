@@ -54,7 +54,7 @@ class RestClient
             $default_header = array_merge($default_header, $customHeaders);
         }
 
-        if(!isset($default_header['Authorization'])){
+        if (!isset($default_header['Authorization'])) {
             $default_header['Authorization'] = 'Bearer '.SDK::getAccessToken();
         }
 
@@ -74,13 +74,11 @@ class RestClient
      */
     protected function setData(Http\HttpRequest $connect, $data, $content_type = '')
     {
-        
         if ($content_type == "application/json") {
-                
             if (gettype($data) == "string") {
                 json_decode($data, true);
-            } else { 
-                $data = json_encode($data); 
+            } else {
+                $data = json_encode($data);
             }
 
             if (function_exists('json_last_error')) {
@@ -89,15 +87,12 @@ class RestClient
                     throw new Exception("JSON Error [{$json_error}] - Data: {$data}");
                 }
             }
- 
-            
-        } 
+        }
         if ($data != "[]") {
             $connect->setOption(CURLOPT_POSTFIELDS, $data);
         } else {
             $connect->setOption(CURLOPT_POSTFIELDS, "");
         }
-        
     }
 
     /**
@@ -123,7 +118,7 @@ class RestClient
      * @throws Exception
      */
     protected function exec($options)
-    {  
+    {
         $method = key($options);
         $requestPath = reset($options);
         $verb = self::$verbArray[$method];
@@ -193,7 +188,7 @@ class RestClient
         $apiHttpCode = $connect->getInfo(CURLINFO_HTTP_CODE);
         
         if ($apiResult === false) {
-            throw new Exception ($connect->error());
+            throw new Exception($connect->error());
         }
         
         $response['response'] = [];
@@ -230,7 +225,7 @@ class RestClient
      * @throws Exception
      */
     public function post($uri, $options = [])
-    {  
+    {
         return $this->exec(array_merge(['post' => $uri], $options));
     }
 

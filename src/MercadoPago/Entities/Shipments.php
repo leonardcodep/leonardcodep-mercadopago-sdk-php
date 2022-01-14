@@ -15,7 +15,8 @@ use phpDocumentor\Descriptor\Type\FloatDescriptor;
  * @RestMethod(resource="/v1/payments/:payment_id/refunds/:id", method="read")
  * @deprecated This class is deprecated
  */
-class Shipments extends Entity {
+class Shipments extends Entity
+{
 
     /**
      * mode
@@ -72,5 +73,4 @@ class Shipments extends Entity {
      * @var string
      */
     protected $default_shipping_method;
-
 }

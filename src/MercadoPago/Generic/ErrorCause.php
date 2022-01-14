@@ -2,11 +2,8 @@
  
 namespace MercadoPago;
 
-class ErrorCause {
-
-    public $code = ""; 
+class ErrorCause
+{
+    public $code = "";
     public $description = "";
-
 }
-
-?>

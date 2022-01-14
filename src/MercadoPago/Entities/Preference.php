@@ -7,9 +7,9 @@ use MercadoPago\Annotation\Attribute;
 
 /**
  * This class will allow you to charge your customers through our web form from any device in a simple, fast and secure way.
- *  
+ *
  * @link https://www.mercadopago.com/developers/en/guides/online-payments/checkout-pro/introduction Click here for more infos
- * 
+ *
  * @RestMethod(resource="/checkout/preferences", method="create")
  * @RestMethod(resource="/checkout/preferences/:id", method="read")
  * @RestMethod(resource="/checkout/preferences/search", method="search")
@@ -227,5 +227,4 @@ class Preference extends Entity
      * @var array
      */
     protected $tracks;
-
 }

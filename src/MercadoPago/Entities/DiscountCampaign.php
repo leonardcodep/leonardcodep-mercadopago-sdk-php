@@ -67,7 +67,8 @@ class DiscountCampaign extends Entity
      * @return mixed|null
      * @throws \Exception
      */
-    public static function read($options = [], $params = []){
+    public static function read($options = [], $params = [])
+    {
         return parent::read([], $options);
     }
 }

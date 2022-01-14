@@ -8,8 +8,7 @@ use Exception;
  *
  * @package MercadoPago\Http
  */
-class CurlRequest
-    implements HttpRequest
+class CurlRequest implements HttpRequest
 {
     /**
      * @var null|resource

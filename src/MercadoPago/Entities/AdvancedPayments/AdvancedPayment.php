@@ -9,7 +9,7 @@ use MercadoPago\Entity;
 /**
  * Advanced Payment class
  * @link https://www.mercadopago.com/developers/en/reference/advanced_payments/_advanced_payments_id_search/get/ Click here for more infos
- * 
+ *
  * @RestMethod(resource="/v1/advanced_payments", method="create")
  * @RestMethod(resource="/v1/advanced_payments/:id", method="read")
  * @RestMethod(resource="/v1/advanced_payments/search", method="search")
@@ -95,7 +95,8 @@ class AdvancedPayment extends Entity
      * @return bool|mixed
      * @throws \Exception
      */
-    public function cancel() {
+    public function cancel()
+    {
         $this->status = 'cancelled';
 
         return $this->update();
@@ -121,17 +122,18 @@ class AdvancedPayment extends Entity
      * @return bool
      * @throws \Exception
      */
-    public function refund($amount = 0){
+    public function refund($amount = 0)
+    {
         $refund = new Refund(["advanced_payment_id" => $this->id]);
-        if ($amount > 0){
+        if ($amount > 0) {
             $refund->amount = $amount;
         }
 
-        if ($refund->save()){
+        if ($refund->save()) {
             $advanced_payment = self::get($this->id);
             $this->_fillFromArray($this, $advanced_payment->toArray());
             return true;
-        }else{
+        } else {
             $this->error = $refund->error;
             return false;
         }
@@ -145,17 +147,18 @@ class AdvancedPayment extends Entity
      * @return bool
      * @throws \Exception
      */
-    public function refundDisbursement($disbursement_id, $amount = 0){
+    public function refundDisbursement($disbursement_id, $amount = 0)
+    {
         $refund = new DisbursementRefund(["advanced_payment_id" => $this->id, "disbursement_id" => $disbursement_id]);
-        if ($amount > 0){
+        if ($amount > 0) {
             $refund->amount = $amount;
         }
 
-        if ($refund->save()){
+        if ($refund->save()) {
             $advanced_payment = self::get($this->id);
             $this->_fillFromArray($this, $advanced_payment->toArray());
             return true;
-        }else{
+        } else {
             $this->error = $refund->error;
             return false;
         }

@@ -14,7 +14,8 @@ use MercadoPago\Entity;
  * @RestMethod(resource="/v1/advanced_payments/:advanced_payment_id/disbursements/:disbursement_id/refunds", method="create")
  * @RestMethod(resource="/v1/advanced_payments/:advanced_payment_id/disbursements/:disbursement_id/refunds/:refund_id", method="read")
  */
-class DisbursementRefund extends Entity {
+class DisbursementRefund extends Entity
+{
 
     /**
      * id
@@ -71,5 +72,4 @@ class DisbursementRefund extends Entity {
      * @var int
      */
     protected $disbursement_id;
-
 }
