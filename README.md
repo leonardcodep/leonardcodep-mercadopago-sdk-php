@@ -1,14 +1,14 @@
 # Mercado Pago SDK for PHP
 
-[![Latest Stable Version](https://poser.pugx.org/mercadopago/dx-php/v/stable)](https://packagist.org/packages/mercadopago/dx-php)
-[![Total Downloads](https://poser.pugx.org/mercadopago/dx-php/downloads)](https://packagist.org/packages/mercadopago/dx-php)
-[![License](https://poser.pugx.org/mercadopago/dx-php/license)](https://packagist.org/packages/mercadopago/dx-php)
+[![Latest Stable Version](https://poser.pugx.org/leonardcodep/mercadopago-sdk-php/v/stable)](https://packagist.org/packages/leonardcodep/mercadopago-sdk-php)
+[![Total Downloads](https://poser.pugx.org/leonardcodep/mercadopago-sdk-php/downloads)](https://packagist.org/packages/leonardcodep/mercadopago-sdk-php)
+[![License](https://poser.pugx.org/leonardcodep/mercadopago-sdk-php/license)](https://packagist.org/packages/leonardcodep/mercadopago-sdk-php)
 
 This library provides developers with a simple set of bindings to help you integrate Mercado Pago API to a website and start receiving payments.
 
 ## 💡 Requirements
 
-PHP 5.6, 7.1, 8.1 or higher
+PHP 7.1, 8.0 y 8.1 or higher
 
 ## 💻 Installation 
 
