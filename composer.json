@@ -1,0 +1,44 @@
+{
+  "name": "leonardcodep/mercadopago-sdk-php",
+  "description": "Cliente Mercado de Pago API para PHP",
+  "keywords": [
+    "mercadopago",
+    "client",
+    "api",
+    "peru",
+    "php",
+    "payments",
+    "pagos",
+    "laravel"
+  ],
+  "homepage": "https://github.com/leonardcodep/mercadopago-sdk-php",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^7.3|^8.0|^8.1",
+    "doctrine/common": "^3.2.1",
+    "doctrine/annotations": "^1.13.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.4.* || 4.8.* || 9.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MercadoPago\\": [
+        "src/MercadoPago/",
+        "src/MercadoPago/Generic/",
+        "src/MercadoPago/Entities/",
+        "src/MercadoPago/Entities/Shared/"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.org"
+    },
+    {
+      "packagist": false
+    }
+  ]
+}
