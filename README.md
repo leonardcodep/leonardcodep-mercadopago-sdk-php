@@ -31,22 +31,46 @@ That's it! Mercado Pago SDK has been successfully installed.
   <?php
     require_once 'vendor/autoload.php'; // You have to require the library from your Composer vendor folder
 
-    MercadoPago\SDK::setAccessToken("YOUR_ACCESS_TOKEN"); // Either Production or SandBox AccessToken
+    use MercadoPago\SDK;
+    use MercadoPago\Entity\Shared\Payment;
+    use MercadoPago\Entity\Shared\Payer;
+    try {
+        SDK::setAccessToken("YOUR_ACCESS_TOKEN"); // Either Production or SandBox AccessToken
+        $payment = new Payment();
+        $payment->transaction_amount = 259;
+        $payment->token = $request->token;
+        $payment->description = "Compra de productos";
+        $payment->installments = (int) $request->installments;
+        $payment->payment_method_id = $request->payment_method_id;
+        $payment->issuer_id = (int) $request->issuer_id;
 
-    $payment = new MercadoPago\Payment();
-    
-    $payment->transaction_amount = 141;
-    $payment->token = "YOUR_CARD_TOKEN";
-    $payment->description = "Ergonomic Silk Shirt";
-    $payment->installments = 1;
-    $payment->payment_method_id = "visa";
-    $payment->payer = array(
-      "email" => "larue.nienow@email.com"
-    );
+        $payer = new Payer();
+        $payerForm = $request->payer;
+        $payer->email = $payerForm['email'];
+        $payer->identification = array(
+            "type" => $payerForm['identification']['type'],
+            "number" => $payerForm['identification']['number']
+        );
+        $payment->payer = $payer;
+        $payment->save();
 
-    $payment->save();
+        if($payment->id === null) {
+            $error_message = 'Unknown error cause';
+            if(isset($payment->error)) {
+                $error_message = $payment->error->message;
+            }
+            throw new Exception($error_message);
+        }
 
-    echo $payment->status;
+        $response = array(
+            "request" => $request,
+            "payment_id" => $payment->id,
+            "status" => $payment->status,
+            "status_detail" => $payment->status_detail,
+        );
+    } catch (Exception $e) {
+        throw new Exception(trim(trim($e->getMessage()), '"'));
+    }
   ?>
 ```
 

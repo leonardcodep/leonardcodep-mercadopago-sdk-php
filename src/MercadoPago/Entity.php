@@ -3,6 +3,8 @@ namespace MercadoPago;
 
 use MercadoPago\Annotation\Attribute;
 use Exception;
+use MercadoPago\Generic\RecuperableError;
+use MercadoPago\Generic\SearchResultsArray;
 
 /**
  * Class Entity
@@ -14,7 +16,7 @@ abstract class Entity
     /**
      * @var
      */
-    
+
     protected static $_custom_headers = array();
     protected static $_manager;
     /**
@@ -113,9 +115,9 @@ abstract class Entity
 
         self::$_manager->setEntityUrl($entity, 'read', $params);
         self::$_manager->cleanEntityDeltaQueryJsonData($entity);
-        
+
         $response =  self::$_manager->execute($entity, 'get', $options);
-        
+
         if ($response['code'] == "200" || $response['code'] == "201") {
             $entity->_fillFromArray($entity, $response['body']);
             $entity->_last = clone $entity;
@@ -142,7 +144,7 @@ abstract class Entity
         self::$_manager->setEntityUrl($entity, 'list', $params);
         self::$_manager->cleanQueryParams($entity);
         $response = self::$_manager->execute($entity, 'get');
-      
+
         if ($response['code'] == "200" || $response['code'] == "201") {
             $results = $response['body'];
             foreach ($results as $result) {
@@ -167,7 +169,7 @@ abstract class Entity
         $searchResult = new SearchResultsArray();
         $searchResult->setEntityTypes($class);
         $entityToQuery = new $class();
-        
+
         self::$_manager->setEntityUrl($entityToQuery, 'search');
         self::$_manager->cleanQueryParams($entityToQuery);
         self::$_manager->setQueryParams($entityToQuery, $filters);
@@ -245,7 +247,7 @@ abstract class Entity
     {
         self::$_manager->setEntityUrl($this, 'create');
         self::$_manager->setEntityQueryJsonData($this);
-        
+
         $response = self::$_manager->execute($this, 'post', $options);
 
         if ($response['code'] == "200" || $response['code'] == "201") {
@@ -273,7 +275,7 @@ abstract class Entity
         if (isset($message['cause'])) {
             $recuperable_error->proccess_causes($message['cause']);
         }
-        
+
         $this->error = $recuperable_error;
     }
 
@@ -287,7 +289,7 @@ abstract class Entity
         return $this->{$name};
     }
 
-    
+
 
     /**
      * @param $name
@@ -449,7 +451,7 @@ abstract class Entity
                     } else {
                         return $value->format('Y-m-d\TH:i:s.000P');
                     }
-                    
+
             }
         } catch (\Exception $e) {
             throw new \Exception('Wrong type ' . gettype($value) . '. Cannot convert ' . $type . ' for property ' . $property);
